@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Contas TikTok</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" href="https://sf-static.tiktokcdn.com/obj/eden-sg/uhtyvueh7nulogpoguhm/tiktok-icon2.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Contas TikTok</h1>
+        <div class="stats">
+            <p>Contas Ativas: <span id="active-count">0</span></p>
+            <p>Contas Inativas: <span id="inactive-count">0</span></p>
+            <p>Contas em Aquecimento: <span id="warming-count">0</span></p>
+        </div>
+        <button onclick="openModal()">Adicionar Conta</button>
+        <div class="card-groups">
+            <div class="card-group" id="active-group">
+                <h2>Contas Ativas</h2>
+                <div class="card-container" id="active-cards">
+                    <!-- Cards will be dynamically added here -->
+                </div>
+            </div>
+            <div class="card-group" id="inactive-group">
+                <h2>Contas Inativas</h2>
+                <div class="card-container" id="inactive-cards">
+                    <!-- Cards will be dynamically added here -->
+                </div>
+            </div>
+            <div class="card-group" id="warming-group">
+                <h2>Contas em Aquecimento</h2>
+                <div class="card-container" id="warming-cards">
+                    <!-- Cards will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Adicionar Conta</h2>
+            <form id="account-form">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+                <input type="checkbox" id="show-password"> Mostrar Senha
+                <label for="status">Status:</label>
+                <select id="status" required>
+                    <option value="active">Ativa</option>
+                    <option value="inactive">Inativa</option>
+                    <option value="warming">Em Aquecimento</option>
+                </select>
+                <button type="submit">Salvar</button>
+            </form>
+            <button id="edit-btn" style="display:none" onclick="editAccount()">Editar Conta</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
